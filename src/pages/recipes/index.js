@@ -1,12 +1,36 @@
 import React from 'react'
 import BaseLayout from '../Layouts/Layout';
 import styles from '../../styles/Recipes.module.css'
-const RecipesList = () => {
+import {getData} from './getData'
+
+export const getStaticProps = async () =>{
+
+const recipes = await getData()
+console.log(recipes);
+return{
+    props:{
+        recipes
+    }
+}
+}
+
+const RecipesList = ({ recipes }) => {
   return (
     <>
       <BaseLayout title={"Recipes"} />
-      <main className={styles.recipes_container}>
         <h1>Recipes</h1>
+      <main className={styles.recipes_container}>
+        {
+          recipes.meals.map( recipe =>(
+
+            <article key={recipe.idMeal}>
+              <div>
+                <h4>{recipe.strMeal}</h4>
+              </div>
+
+            </article>
+          ))
+        }
       </main>
     </>
   );
