@@ -1,0 +1,26 @@
+.container{
+    height: 12vh;
+    background-color: aquamarine;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+.imgcontainer{
+height: 55px;
+}
+.imgcontainer img {
+   height: 100%;
+   margin: 0 30px 0 0;
+}
+.optionscontainer{
+    display: flex;
+    gap: 12px;
+    list-style: none;
+    font-size: 1.2rem;
+}
+.optionscontainer a{
+    text-decoration: none;
+}
