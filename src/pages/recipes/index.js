@@ -29,14 +29,14 @@ const RecipesList = ({ recipes }) => {
         {recipes.meals.map((recipe) => (
           <article key={recipe.idMeal}>
             <div>
-              <Link href={"/recipes"}>
+              <Link href={`/recipes/viewrecipes/${recipe.strMeal}`}>
                 <h4>{recipe.strMeal}</h4>
               </Link>
               <Link href={"/recipes"}>
                 <Image
-                className={styles.image}
+                  className={styles.image}
                   src={recipe.strMealThumb}
-                  alt={recipe.strMeal} 
+                  alt={recipe.strMeal}
                   width={500}
                   height={500}
                   style={{
