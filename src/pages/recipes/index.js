@@ -30,23 +30,25 @@ const RecipesList = ({ recipes }) => {
           <article key={recipe.idMeal}>
             <div>
               <Link href={`/recipes/viewrecipes/${recipe.strMeal}`}>
-                <h4>{recipe.strMeal}</h4>
+                <h4 >{recipe.strMeal}</h4>
               </Link>
-              <Link href={"/recipes"}>
-                <Image
-                  className={styles.image}
-                  src={recipe.strMealThumb}
-                  alt={recipe.strMeal}
-                  width={500}
-                  height={500}
-                  style={{
-                    maxWidth: "100%",
-                    height: "auto",
-                  }}
-                  priority={true}
-                />
+              <Link href={`/recipes/viewrecipes/${recipe.strMeal}`}>
+                  <Image
+                    className={styles.image}
+                    src={recipe.strMealThumb}
+                    alt={recipe.strMeal}
+                    width={500}
+                    height={500}
+                    style={{
+                      maxWidth: "100%",
+                      height: "auto",
+                    }}
+                    priority={true}
+                  />
+                </Link>
+
                 {/* <img src={recipe.strMealThumb} alt={recipe.strMeal} /> */}
-              </Link>
+         
             </div>
           </article>
         ))}

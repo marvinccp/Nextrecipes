@@ -1,14 +1,31 @@
 import BaseLayout from "@/pages/Layouts/Layout";
 import { getData } from "../getData";
 import styles from '../../../styles/Recipe.module.css'
+import Image from "next/image";
+
 
 const Recipe = ({ dataRecipe }) => {
   return (
     <>
       <BaseLayout title={"Recipe"} />
       <section className={styles.recipe_container}>
+        <h1>{dataRecipe.strMeal}</h1>
+        <div className={styles.image_container}>
 
-      <h1>{dataRecipe.strMeal}</h1>
+        <Image
+          className={styles.image}
+          src={dataRecipe.strMealThumb}
+          alt={dataRecipe.strMeal}
+          width={600}
+          height={600}
+          style={{
+            maxWidth: "100%",
+            height: "auto",
+          }}
+          priority={true}
+          />
+          </div>
+          
       </section>
     </>
   );
