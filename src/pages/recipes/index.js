@@ -1,10 +1,19 @@
 import React from 'react'
 import BaseLayout from '../Layouts/Layout';
 import styles from '../../styles/Recipes.module.css'
-import {getData} from './getData'
 import Link from 'next/link'
 import Image from 'next/image';
 
+
+
+
+
+const getData = async () => {
+  const data = await (
+    await fetch("https://www.themealdb.com/api/json/v1/1/search.php?f=s")
+  ).json();
+  return data;
+};
 
 
 export const getStaticProps = async () =>{

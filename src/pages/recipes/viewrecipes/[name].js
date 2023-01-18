@@ -1,5 +1,4 @@
 import BaseLayout from "@/pages/Layouts/Layout";
-import { getData } from "../getData";
 import styles from "../../../styles/Recipe.module.css";
 import Image from "next/image";
 
@@ -130,6 +129,15 @@ const Recipe = ({ dataRecipe }) => {
 };
 
 export default Recipe;
+
+
+const getData = async () => {
+  const data = await (
+    await fetch("https://www.themealdb.com/api/json/v1/1/search.php?f=s")
+  ).json();
+  return data;
+};
+
 
 const getAllRecipesNames = async () => {
   const data = await getData();
